@@ -1,0 +1,201 @@
+Extracting content from Desktop - 1280...
+
+--- Section: Dobra 1 ---
+[Dobra 1 > Rectangle 2] IMAGE/RECTANGLE: Rectangle 2
+[Dobra 1 > Frame 28 > Grupo W3: O Ecossistema que mais transforma E-commerces no Brasil] TEXT: Grupo W3: O Ecossistema que mais transforma 
+E-commerces no Brasil
+[Dobra 1 > Frame 28 > Transformamos vidas através do e-commerce, combinando estratégia, execução e tecnologia dentro de um sistema integrado.] TEXT: Transformamos vidas através do e-commerce, combinando estratégia, execução e tecnologia dentro de um sistema integrado.
+[Dobra 1 > Frame 28 > Frame 13 > Frame 1 > Sede física em Blumenau – SC.] TEXT: Sede física em Blumenau – SC.
+[Dobra 1 > Frame 28 > Frame 13 > Frame 2 > Equipe com mais de 30 profissionais.] TEXT: Equipe com mais de 30 profissionais.
+[Dobra 1 > Frame 28 > Frame 13 > Frame 3 > Operação nacional.] TEXT: Operação nacional.
+[Dobra 1 > Frame 28 > Conheça mais do ecossistema falando com um de nossos especialistas:] TEXT: Conheça mais do ecossistema falando com um de nossos especialistas:
+[Dobra 1 > Frame 28 > Botão > quero conhecer o grupo w3] TEXT: quero conhecer o grupo w3
+[Dobra 1 > Menu > Botão > fale conosco] TEXT: fale conosco
+[Dobra 1 > Menu > Quem Somos] TEXT: Quem Somos
+[Dobra 1 > Menu > Soluções] TEXT: Soluções
+[Dobra 1 > Menu > Cases] TEXT: Cases
+[Dobra 1 > Menu > Diferenciais] TEXT: Diferenciais
+
+--- Section: Dobra 2  ---
+[Dobra 2  > Frame 14 > IMG > Rectangle 10] IMAGE/RECTANGLE: Rectangle 10
+[Dobra 2  > Frame 14 > IMG > Ai-Generate-Landscape-Image-Spark--Streamline-Ultimate.svg] IMAGE/RECTANGLE: Ai-Generate-Landscape-Image-Spark--Streamline-Ultimate.svg
+[Dobra 2  > Frame 14 > TXT > Quem somos] TEXT: Quem somos
+[Dobra 2  > Frame 14 > TXT > O Ecossistema W3 é um grupo empresarial especializado em aceleração e estruturação de e-commerces. Não somos uma empresa de promessa, somos uma estrutura operacional de resultado e performance. Fundado em 2024, com base estratégica em Blumenau – SC, o grupo nasceu com um objetivo claro: Ser o maior ecossistema de e-commerce do Brasil. Atuamos nacionalmente, atendendo marcas que desejam escalar com margem, previsibilidade e profissionalização.] TEXT: O Ecossistema W3 é um grupo empresarial especializado em aceleração e estruturação de e-commerces.
+
+Não somos uma empresa de promessa, somos uma estrutura operacional de resultado e performance. Fundado em 2024, com base estratégica em Blumenau – SC, o grupo nasceu com um objetivo claro: Ser o maior ecossistema de e-commerce do Brasil. 
+
+Atuamos nacionalmente, atendendo marcas que desejam escalar com margem, previsibilidade e profissionalização.
+
+--- Section: Dobra 3 ---
+[Dobra 3 > TITULO > Nossas Soluções] TEXT: Nossas Soluções
+[Dobra 3 > TITULO > Soluções do Ecossistema W3] TEXT: Soluções do Ecossistema W3
+[Dobra 3 > TITULO > Somos um modelo integrado por unidades estratégicas que garantem 100% do resultado do seu ecommerce] TEXT: Somos um modelo integrado por unidades estratégicas que garantem 100% do resultado do seu ecommerce
+[Dobra 3 > Serviços > 01 Mentoria > Mentoria AMES] TEXT: Mentoria AMES
+[Dobra 3 > Serviços > 01 Mentoria > Estruturação estratégica para donos de E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:] TEXT: Estruturação estratégica para donos de 
+E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:
+[Dobra 3 > Serviços > 01 Mentoria > Frame 24 > Resultado: mais vendas Eficiência: mais lucro Continuidade: recompra e ainda mais lucro] TEXT: Resultado: mais vendas
+Eficiência: mais lucro
+Continuidade: recompra e ainda mais lucro
+[Dobra 3 > Serviços > 01 Mentoria > Conhecer a Mentoria AMES →] TEXT: Conhecer a Mentoria AMES →
+[Dobra 3 > Serviços > 01 Mentoria > Botão > Conhecer a Mentoria AMES] TEXT: Conhecer a Mentoria AMES
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > W3 Tráfego Pago] TEXT: W3 Tráfego Pago
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:] TEXT: Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Frame 25 > Custo de mídia controlado Escala sustentável Estrutura de funil ROAS consistente Otimizações de conversão] TEXT: Custo de mídia controlado
+Escala sustentável
+Estrutura de funil
+ROAS consistente
+Otimizações de conversão
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Conhecer a W3 Tráfego Pago →] TEXT: Conhecer a W3 Tráfego Pago →
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Botão > Conhecer a W3 Tráfego Pago] TEXT: Conhecer a W3 Tráfego Pago
+[Dobra 3 > Serviços > 03 W3 Marketplace > W3 Marketplace] TEXT: W3 Marketplace
+[Dobra 3 > Serviços > 03 W3 Marketplace > Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:] TEXT: Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:
+[Dobra 3 > Serviços > 03 W3 Marketplace > Frame 26 > Mercado Livre Shopee Shein TEMU] TEXT: Mercado Livre
+Shopee
+Shein
+TEMU
+[Dobra 3 > Serviços > 03 W3 Marketplace > Conhecer a W3 Marketplace →] TEXT: Conhecer a W3 Marketplace →
+[Dobra 3 > Serviços > 03 W3 Marketplace > Botão > Conhecer a W3 Marketplace] TEXT: Conhecer a W3 Marketplace
+[Dobra 3 > Serviços > 04 W3 Pagamentos > W3 Pagamentos] TEXT: W3 Pagamentos
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solucão com maior performance de aprovação de pedidos para ecommeerce do brasil. Na w3 pagamentos voçê garante:] TEXT: Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solucão com maior performance de aprovação de pedidos para ecommeerce do brasil. Na w3 pagamentos voçê garante:
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Frame 19 > a mais alta taxa de aprovação do mercado Estrutura de checkout transparente otimizada Recuperação de carrinho com ia] TEXT: a mais alta taxa de aprovação do mercado
+Estrutura de checkout transparente otimizada
+Recuperação de carrinho com ia
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Conhecer a W3 Pagamentos →] TEXT: Conhecer a W3 Pagamentos →
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Botão > Conhecer a W3 Pagamentos] TEXT: Conhecer a W3 Pagamentos
+[Dobra 3 > Serviços > 05 W3 SaaS > SaaS W3] TEXT: SaaS W3
+[Dobra 3 > Serviços > 05 W3 SaaS > Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.] TEXT: Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.
+[Dobra 3 > Serviços > 05 W3 SaaS > Frame 19 > Dashboard de gestão CRM de influenciadoras Calculadora de margem IA integrada Implementação do método W3 pra escalar suas vendas] TEXT: Dashboard de gestão
+CRM de influenciadoras
+Calculadora de margem
+IA integrada
+Implementação do método W3 pra escalar suas vendas
+[Dobra 3 > Serviços > 05 W3 SaaS > Conhecer o SaaS W3 →] TEXT: Conhecer o SaaS W3 →
+[Dobra 3 > Serviços > 05 W3 SaaS > Botão > Conhecer o SaaS W3] TEXT: Conhecer o SaaS W3
+[Dobra 3 > Serviços > Em desenvolvimento > Em desenvolvimento] TEXT: Em desenvolvimento
+[Dobra 3 > Serviços > 01 Mentoria > Mentoria AMES] TEXT: Mentoria AMES
+[Dobra 3 > Serviços > 01 Mentoria > Estruturação estratégica para donos de E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:] TEXT: Estruturação estratégica para donos de 
+E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:
+[Dobra 3 > Serviços > 01 Mentoria > Frame 24 > Resultado: mais vendas Eficiência: mais lucro Continuidade: recompra e ainda mais lucro] TEXT: Resultado: mais vendas
+Eficiência: mais lucro
+Continuidade: recompra e ainda mais lucro
+[Dobra 3 > Serviços > 01 Mentoria > Conhecer a Mentoria AMES →] TEXT: Conhecer a Mentoria AMES →
+[Dobra 3 > Serviços > 01 Mentoria > Botão > Conhecer a Mentoria AMES] TEXT: Conhecer a Mentoria AMES
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > W3 Tráfego Pago] TEXT: W3 Tráfego Pago
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:] TEXT: Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Frame 25 > Custo de mídia controlado Escala sustentável Estrutura de funil ROAS consistente Otimizações de conversão] TEXT: Custo de mídia controlado
+Escala sustentável
+Estrutura de funil
+ROAS consistente
+Otimizações de conversão
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Conhecer a W3 Tráfego Pago →] TEXT: Conhecer a W3 Tráfego Pago →
+[Dobra 3 > Serviços > 02 W3 Tráfego Pago > Botão > Conhecer a W3 Tráfego Pago] TEXT: Conhecer a W3 Tráfego Pago
+[Dobra 3 > Serviços > 03 W3 Marketplace > W3 Marketplace] TEXT: W3 Marketplace
+[Dobra 3 > Serviços > 03 W3 Marketplace > Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:] TEXT: Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:
+[Dobra 3 > Serviços > 03 W3 Marketplace > Frame 26 > Mercado Livre Shopee Shein TEMU] TEXT: Mercado Livre
+Shopee
+Shein
+TEMU
+[Dobra 3 > Serviços > 03 W3 Marketplace > Conhecer a W3 Marketplace →] TEXT: Conhecer a W3 Marketplace →
+[Dobra 3 > Serviços > 03 W3 Marketplace > Botão > Conhecer a W3 Marketplace] TEXT: Conhecer a W3 Marketplace
+[Dobra 3 > Serviços > 04 W3 Pagamentos > W3 Pagamentos] TEXT: W3 Pagamentos
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solucão com maior performance de aprovação de pedidos para ecommeerce do brasil. Na w3 pagamentos voçê garante:] TEXT: Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solucão com maior performance de aprovação de pedidos para ecommeerce do brasil. Na w3 pagamentos voçê garante:
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Frame 19 > a mais alta taxa de aprovação do mercado Estrutura de checkout transparente otimizada Recuperação de carrinho com ia] TEXT: a mais alta taxa de aprovação do mercado
+Estrutura de checkout transparente otimizada
+Recuperação de carrinho com ia
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Conhecer a W3 Pagamentos →] TEXT: Conhecer a W3 Pagamentos →
+[Dobra 3 > Serviços > 04 W3 Pagamentos > Botão > Conhecer a W3 Pagamentos] TEXT: Conhecer a W3 Pagamentos
+[Dobra 3 > Serviços > 05 W3 SaaS > SaaS W3] TEXT: SaaS W3
+[Dobra 3 > Serviços > 05 W3 SaaS > Frame 11 > SaaS W3] TEXT: SaaS W3
+[Dobra 3 > Serviços > 05 W3 SaaS > Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.] TEXT: Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.
+[Dobra 3 > Serviços > 05 W3 SaaS > Frame 19 > Dashboard de gestão CRM de influenciadoras Calculadora de margem IA integrada Implementação do método W3 pra escalar suas vendas] TEXT: Dashboard de gestão
+CRM de influenciadoras
+Calculadora de margem
+IA integrada
+Implementação do método W3 pra escalar suas vendas
+[Dobra 3 > Serviços > 05 W3 SaaS > Conhecer o SaaS W3 →] TEXT: Conhecer o SaaS W3 →
+[Dobra 3 > Serviços > 05 W3 SaaS > Botão > Conhecer o SaaS W3] TEXT: Conhecer o SaaS W3
+[Dobra 3 > Serviços > Em desenvolvimento > Em desenvolvimento] TEXT: Em desenvolvimento
+
+--- Section: Dobra 4 ---
+[Dobra 4 > Texto > Titulo > nossa estrutura] TEXT: nossa estrutura
+[Dobra 4 > Texto > Titulo > Nossa sede em Blumenau - SC] TEXT: Nossa sede em Blumenau - SC
+[Dobra 4 > Texto > Titulo > Com mais de 30 colaboradores, nossa operação está baseada em Blumenau, um dos polos empresariais mais fortes do Sul do Brasil. Acreditamos em estrutura física. Acreditamos em time presente. Acreditamos em cultura construída no ambiente. A sede da W3 concentra:] TEXT: Com mais de 30 colaboradores, nossa operação está baseada em Blumenau, um dos polos empresariais mais fortes do Sul do Brasil.
+
+Acreditamos em estrutura física. Acreditamos em time presente.
+Acreditamos em cultura construída no ambiente. A sede da W3 concentra:
+[Dobra 4 > Texto > Frame 18 > Topico 1 > Comercial] TEXT: Comercial
+[Dobra 4 > Texto > Frame 18 > Topico 2 > Entrega] TEXT: Entrega
+[Dobra 4 > Texto > Frame 18 > Topico 3 > Marketing] TEXT: Marketing
+[Dobra 4 > Texto > Frame 18 > Topico 4 > Operação estratégica] TEXT: Operação estratégica
+[Dobra 4 > Texto > Frame 18 > Topico 5 > Liderança] TEXT: Liderança
+[Dobra 4 > Texto > Aqui, estratégia não é remota da realidade. Ela nasce da operação diária.] TEXT: Aqui, estratégia não é remota da realidade. Ela nasce da operação diária.
+[Dobra 4 > IMGS > Rectangle 6506] IMAGE/RECTANGLE: Rectangle 6506
+[Dobra 4 > IMGS > Rectangle 6507] IMAGE/RECTANGLE: Rectangle 6507
+[Dobra 4 > IMGS > Rectangle 6509] IMAGE/RECTANGLE: Rectangle 6509
+[Dobra 4 > IMGS > Rectangle 6508] IMAGE/RECTANGLE: Rectangle 6508
+
+--- Section: Dobra 5 ---
+[Dobra 5 > Gerar Previsibilidade > Gerar previsibilidade] TEXT: Gerar previsibilidade
+[Dobra 5 > Gerar Previsibilidade > Dados e métricas que eliminam achismos e trazem clareza para o crescimento.] TEXT: Dados e métricas que eliminam achismos e trazem clareza para o crescimento.
+[Dobra 5 > Gerar Margem > Gerar margem] TEXT: Gerar margem
+[Dobra 5 > Gerar Margem > Otimização financeira para que cada venda contribua com lucro real.] TEXT: Otimização financeira para que cada venda contribua com lucro real.
+[Dobra 5 > Gerar liberdade estratégica > Gerar Liberdade Estratégica] TEXT: Gerar Liberdade Estratégica
+[Dobra 5 > Gerar liberdade estratégica > Autonomia para tomar decisões com base em estrutura sólida.] TEXT: Autonomia para tomar decisões com base em estrutura sólida.
+[Dobra 5 > Estruturar Negócios Reais > Estruturar Negócios Reais] TEXT: Estruturar Negócios Reais
+[Dobra 5 > Estruturar Negócios Reais > Processos, times e sistemas que sustentam a operação a longo prazo.] TEXT: Processos, times e sistemas que sustentam a operação a longo prazo.
+[Dobra 5 > Profissionalizar Operações > Profissionalizar Operações] TEXT: Profissionalizar Operações
+[Dobra 5 > Profissionalizar Operações > Elevar o nível de gestão e execução do seu e-commerce.] TEXT: Elevar o nível de gestão e execução do seu e-commerce.
+[Dobra 5 > TITULO > nosso propósito] TEXT: nosso propósito
+[Dobra 5 > TITULO > Transformar vidas através do e-commerce.] TEXT: Transformar vidas através do e-commerce.
+[Dobra 5 > TITULO > Não apenas aumentar faturamento. Transformar significa:] TEXT: Não apenas aumentar faturamento. Transformar significa:
+
+--- Section: Dobra 6 ---
+[Dobra 6 > TITULO > cASES] TEXT: cASES
+[Dobra 6 > TITULO > Resultados Reais. Operação Interna.] TEXT: Resultados Reais. Operação Interna.
+[Dobra 6 > Frame 14 > IMG > Rectangle 10] IMAGE/RECTANGLE: Rectangle 10
+[Dobra 6 > Frame 14 > IMG > Ai-Generate-Landscape-Image-Spark--Streamline-Ultimate.svg] IMAGE/RECTANGLE: Ai-Generate-Landscape-Image-Spark--Streamline-Ultimate.svg
+[Dobra 6 > Frame 14 > TXT > Ame Kids] TEXT: Ame Kids
+[Dobra 6 > Frame 14 > TXT > A Ame Kids, cofundada por Leonardo Ames, é um dos maiores e-commerces de moda infantil do Brasil.] TEXT: A Ame Kids, cofundada por Leonardo Ames, é um dos maiores e-commerces de moda infantil do Brasil.
+[Dobra 6 > Frame 14 > TXT > Frame 19 > Múltiplos 7 dígitos anuais Estrutura multi-canal Operação validada na prática Base real para o método AMES] TEXT: Múltiplos 7 dígitos anuais
+Estrutura multi-canal
+Operação validada na prática
+Base real para o método AMES
+[Dobra 6 > Frame 14 > TXT > O que ensinamos é aplicado diariamente na operação. Não é teoria. É validação real.] TEXT: O que ensinamos é aplicado diariamente na operação. Não é teoria. É validação real.
+[Dobra 6 > O diferencial não foi “crescer rápido”. Foi crescer com estrutura.] TEXT: O diferencial não foi “crescer rápido”.
+Foi crescer com estrutura.
+[Dobra 6 > TITULO > cASES] TEXT: cASES
+[Dobra 6 > TITULO > Caso de Escala Estruturada] TEXT: Caso de Escala Estruturada
+[Dobra 6 > Frame 21 > Cliente do segmento de E-commerce que já faturava, mas enfrentava:] TEXT: Cliente do segmento de 
+E-commerce que já faturava, mas enfrentava:
+[Dobra 6 > Frame 21 > Frame 19 > Margem comprimida Dependência de tráfego Falta de previsibilidade] TEXT: Margem comprimida
+Dependência de tráfego
+Falta de previsibilidade
+[Dobra 6 > Frame 22 > Após implementação do método e estruturação:] TEXT: Após implementação do método e estruturação:
+[Dobra 6 > Frame 22 > Frame 19 > Reorganização financeira Estrutura multi-canal Melhoria em ROAS Escala com controle de margem] TEXT: Reorganização financeira
+Estrutura multi-canal
+Melhoria em ROAS
+Escala com controle de margem
+
+--- Section: Dobra 7 ---
+[Dobra 7 > Gerar Previsibilidade > Fundadores operadores] TEXT: Fundadores operadores
+[Dobra 7 > Gerar Previsibilidade > Liderança que vive a operação diariamente.] TEXT: Liderança que vive a operação diariamente.
+[Dobra 7 > Gerar Margem > Ecossistema completo] TEXT: Ecossistema completo
+[Dobra 7 > Gerar Margem > Todas as soluções integradas num só lugar.] TEXT: Todas as soluções integradas num só lugar.
+[Dobra 7 > Gerar liberdade estratégica > Time interno estruturado] TEXT: Time interno estruturado
+[Dobra 7 > Gerar liberdade estratégica > Mais de 30 profissionais dedicados.] TEXT: Mais de 30 profissionais dedicados.
+[Dobra 7 > Estruturar Negócios Reais > Tecnologia própria] TEXT: Tecnologia própria
+[Dobra 7 > Estruturar Negócios Reais > SaaS em desenvolvimento com IA integrada.] TEXT: SaaS em desenvolvimento com IA integrada.
+[Dobra 7 > Profissionalizar Operações > Cultura de métricas] TEXT: Cultura de métricas
+[Dobra 7 > Profissionalizar Operações > Decisões baseadas em dados reais.] TEXT: Decisões baseadas em dados reais.
+[Dobra 7 > Estrutura física > Estrutura física] TEXT: Estrutura física
+[Dobra 7 > Estrutura física > Sede consolidada em Blumenau – SC.] TEXT: Sede consolidada em Blumenau – SC.
+[Dobra 7 > TITULO > Diferencial Competitivo] TEXT: Diferencial Competitivo
+[Dobra 7 > TITULO > Não somos dependentes de uma única solução. Somos um sistema integrado.] TEXT: Não somos dependentes de uma única solução. Somos um sistema integrado.
+[Dobra 7 > TITULO > O que nos posiciona de forma distinta:] TEXT: O que nos posiciona de forma distinta:
+
+--- Section: Dobra 8 ---
+[Dobra 8 > TITULO > O Ecossistema W3 representa: Estrutura.] TEXT: O Ecossistema W3 representa: Estrutura.
+[Dobra 8 > TITULO > Botão > quero conhecer o grupo w3] TEXT: quero conhecer o grupo w3
+
+--- Section: Rodapé ---
+[Rodapé > © 2026 Grupo W3. Todos os direitos reservados.] TEXT: © 2026 Grupo W3. Todos os direitos reservados.
