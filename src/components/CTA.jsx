@@ -8,7 +8,7 @@ export default function CTA() {
           </h2>
 
           <a
-            href="https://wa.me/5500000000000"
+            href="https://api.whatsapp.com/send/?phone=5568992523482&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-[#F2F2F2] font-bold uppercase tracking-wide transition-opacity hover:opacity-90 w-full md:w-auto justify-center"

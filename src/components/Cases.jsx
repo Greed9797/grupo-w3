@@ -57,7 +57,6 @@ export default function Cases() {
 
         {/* Header 2 */}
         <div className="text-center mb-8 md:mb-10">
-          <p className="text-[#F55900] text-[12px] font-medium uppercase tracking-widest mb-4">cases</p>
           <h2 className="text-[30px] md:text-[35px] font-semibold text-white">Caso de Escala Estruturada</h2>
         </div>
 

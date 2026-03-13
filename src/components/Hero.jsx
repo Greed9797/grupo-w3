@@ -92,29 +92,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <p style={{ color: '#C3C3CA', fontSize: 'clamp(12px, 1.4vw, 14px)', marginBottom: '16px' }}>
-          Conheça mais do ecossistema falando com um de nossos especialistas:
-        </p>
-
         <a
-          href="#contato"
-          className="inline-flex items-center font-bold uppercase tracking-wide transition-opacity hover:opacity-90"
-          style={{
-            background: 'linear-gradient(90deg, #F55900, #F47917)',
-            borderRadius: '13.79px',
-            paddingTop: '18px',
-            paddingBottom: '18px',
-            paddingLeft: '40px',
-            paddingRight: '36px',
-            gap: '10px',
-            fontSize: 'clamp(11.9px, 1.4vw, 13.8px)',
-            color: '#F2F2F2',
-          }}
+          href="#mentoria-ames"
+          className="flex items-center justify-center mt-2 animate-bounce"
+          aria-label="Conhecer nossos serviços"
         >
-          quero conhecer o grupo w3
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="7" y1="17" x2="17" y2="7"/>
-            <polyline points="7 7 17 7 17 17"/>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
         </a>
       </div>

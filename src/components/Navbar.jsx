@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="#contato"
+          href="https://api.whatsapp.com/send/?phone=5568992523482&text&type=phone_number&app_absent=0"
           className="hidden md:flex items-center gap-2 bg-[#F55900] text-[#F2F2F2] text-[9.5px] font-bold px-5 py-3 rounded-[9.5px] hover:bg-orange-600 transition-colors uppercase tracking-wide"
         >
           fale conosco
@@ -62,7 +62,7 @@ export default function Navbar() {
           <a href="#cases" onClick={() => setMenuOpen(false)} className="text-[#939393] hover:text-white transition-colors text-[15px]">Cases</a>
           <a href="#diferenciais" onClick={() => setMenuOpen(false)} className="text-[#939393] hover:text-white transition-colors text-[15px]">Diferenciais</a>
           <a
-            href="#contato"
+            href="https://api.whatsapp.com/send/?phone=5568992523482&text&type=phone_number&app_absent=0"
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-center gap-2 text-[#F2F2F2] font-bold uppercase tracking-wide py-[14px] rounded-[11.9px] mt-1"
             style={{ background: 'linear-gradient(90deg, #F55900, #F47917)', fontSize: '11.9px' }}

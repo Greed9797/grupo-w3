@@ -60,7 +60,7 @@ const services = [
   {
     icon: <BrainIcon />,
     logo: '/images/logo-mentoria.svg',
-    logoH: 20,
+    logoH: 24,
     title: 'Mentoria AMES',
     description: 'Estruturação estratégica para donos de E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:',
     bullets: [
@@ -73,7 +73,7 @@ const services = [
   {
     icon: <TrendingUpIcon />,
     logo: '/images/logo-trafego.svg',
-    logoH: 26,
+    logoH: 24,
     title: 'W3 Tráfego Pago',
     description: 'Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:',
     bullets: [
@@ -88,7 +88,7 @@ const services = [
   {
     icon: <ShoppingBagIcon />,
     logo: '/images/logo-marketplace.svg',
-    logoH: 22,
+    logoH: 24,
     title: 'W3 Marketplace',
     description: 'Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:',
     bullets: [
@@ -102,7 +102,7 @@ const services = [
   {
     icon: <DollarIcon />,
     logo: '/images/logo-pagamentos.svg',
-    logoH: 25,
+    logoH: 24,
     title: 'W3 Pagamentos',
     description: 'Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solução com maior performance de aprovação de pedidos para ecommerce do brasil. Na w3 pagamentos você garante:',
     bullets: [
@@ -114,9 +114,9 @@ const services = [
   },
   {
     icon: <DashboardIcon />,
-    logo: '/images/logo-saas.svg',
-    logoH: 19,
-    title: 'SaaS W3',
+    logo: '/images/logo-labs.png',
+    logoH: 24,
+    title: 'W3 Labs',
     description: 'Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.',
     bullets: [
       { rest: 'Dashboard de gestão' },
@@ -125,7 +125,7 @@ const services = [
       { rest: 'IA integrada' },
       { rest: 'Implementação do método W3 pra escalar suas vendas' },
     ],
-    cta: 'Conhecer o SaaS W3',
+    cta: 'Conhecer o W3 Labs',
     badge: 'Em desenvolvimento',
   },
 ]
@@ -149,7 +149,7 @@ export default function Solucoes() {
         {/* Row 1 — 1 col mobile, 2 col tablet, 3 col desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           {firstRow.map((service, index) => (
-            <ServiceCard key={index} service={service} />
+            <ServiceCard key={index} service={service} id={index === 0 ? 'mentoria-ames' : undefined} />
           ))}
         </div>
 
@@ -166,9 +166,9 @@ export default function Solucoes() {
   )
 }
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, id }) {
   return (
-    <div className="relative bg-[#0D0D0D] border border-[#262626] rounded-[9px] p-6 flex flex-col h-full">
+    <div id={id} className="relative bg-[#0D0D0D] border border-[#262626] rounded-[9px] p-6 flex flex-col h-full">
       {/* Badge */}
       {service.badge && (
         <div
@@ -179,23 +179,14 @@ function ServiceCard({ service }) {
         </div>
       )}
 
-      {/* Icon box + Brand logo */}
-      <div className="flex items-center gap-3 mb-4">
-        <div
-          className="flex-shrink-0 flex items-center justify-center rounded-[4.5px]"
-          style={{ width: '43px', height: '43px', background: '#141414' }}
-        >
-          {service.icon}
-        </div>
+      {/* Brand logo */}
+      <div className="mb-4">
         <img
           src={service.logo}
           alt={service.title}
           style={{ height: `${service.logoH}px`, width: 'auto' }}
         />
       </div>
-
-      {/* Card title */}
-      <h3 className="text-white text-[20px] font-semibold mb-3 leading-tight">{service.title}</h3>
 
       {/* Description */}
       <p className="text-[#939393] text-[12px] leading-[1.3] mb-4">{service.description}</p>
@@ -213,14 +204,9 @@ function ServiceCard({ service }) {
         ))}
       </ul>
 
-      {/* Orange link */}
-      <a href="#contato" className="text-[#F55900] text-[12px] font-semibold mb-3 flex items-center gap-1 hover:opacity-80 transition-opacity">
-        {service.cta} →
-      </a>
-
       {/* CTA Button */}
       <a
-        href="#contato"
+        href="https://api.whatsapp.com/send/?phone=5568992523482&text&type=phone_number&app_absent=0"
         className="flex items-center justify-center gap-2 text-[#F2F2F2] font-bold uppercase tracking-wide py-[14px] rounded-[10.9px] transition-opacity hover:opacity-90 mt-auto"
         style={{ background: 'linear-gradient(90deg, #F55900, #F47917)', fontSize: '10.86px' }}
       >
