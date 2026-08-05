@@ -9,7 +9,7 @@ export default function Hero() {
         className="absolute"
         style={{
           top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `linear-gradient(rgb(245,89,0), rgb(245,89,0)), url('/images/hero-bg.jpg')`,
+          backgroundImage: `linear-gradient(rgb(245,89,0), rgb(245,89,0)), url('/images/hero-bg.webp')`,
           backgroundBlendMode: 'color, normal',
           backgroundSize: 'cover',
           backgroundPosition: 'center 8px',

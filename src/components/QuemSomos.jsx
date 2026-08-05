@@ -13,8 +13,12 @@ export default function QuemSomos() {
             {/* Image */}
             <div className="md:w-[387px] flex-shrink-0">
               <img
-                src="/images/quem-somos.jpg"
+                src="/images/quem-somos.webp"
                 alt="Grupo W3"
+                width="387"
+                height="387"
+                loading="lazy"
+                decoding="async"
                 className="w-full md:h-[387px] object-cover rounded-[6px]"
               />
             </div>

@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 h-[75px] bg-black/50 backdrop-blur-sm border-b border-[#242424]">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="/images/logo-grupow3.svg" alt="Grupo W3" style={{ height: '30px', width: 'auto' }} />
+          <img src="/images/logo-grupow3.svg" alt="Grupo W3" width="100" height="30" decoding="async" style={{ height: '30px', width: 'auto' }} />
         </div>
 
         {/* Desktop nav links */}

@@ -29,8 +29,12 @@ export default function Cases() {
           {/* Image */}
           <div className="flex-shrink-0 flex items-center justify-center p-6 md:p-0 md:pl-[42px] md:pt-[48px] md:pb-[48px]">
             <img
-              src="/images/amekids.jpg"
+              src="/images/amekids.webp"
               alt="Ame Kids"
+              width="387"
+              height="387"
+              loading="lazy"
+              decoding="async"
               className="w-full md:w-[387px] md:h-[387px] object-cover rounded-[6px]"
             />
           </div>

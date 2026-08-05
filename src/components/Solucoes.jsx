@@ -60,6 +60,7 @@ const services = [
   {
     icon: <BrainIcon />,
     logo: '/images/logo-mentoria.svg',
+    logoW: 234,
     logoH: 24,
     title: 'Mentoria AMES',
     description: 'Estruturação estratégica para donos de E-commerce que já faturam e querem escalar com margem, com o Método utilizado pra sair do zero ao 3º maior ecommerce de moda infantil do Brasil, focando em 3 pilares:',
@@ -73,6 +74,7 @@ const services = [
   {
     icon: <TrendingUpIcon />,
     logo: '/images/logo-trafego.svg',
+    logoW: 180,
     logoH: 24,
     title: 'W3 Tráfego Pago',
     description: 'Gestão estratégica de mídia, que vai além de "apertar botões" e analisa sua venda ponta a ponta, com foco em:',
@@ -88,6 +90,7 @@ const services = [
   {
     icon: <ShoppingBagIcon />,
     logo: '/images/logo-marketplace.svg',
+    logoW: 203,
     logoH: 24,
     title: 'W3 Marketplace',
     description: 'Mesmo com produto e estratégia, pode faltar braço na sua operação, e foi com essa necessidade que estruturamos a W3 Gestão de Marketplaces. Nosso time de especialista estrutura anúncios e campanhas nos principais marketplaces do Brasil, incluindo:',
@@ -102,6 +105,7 @@ const services = [
   {
     icon: <DollarIcon />,
     logo: '/images/logo-pagamentos.svg',
+    logoW: 186,
     logoH: 24,
     title: 'W3 Pagamentos',
     description: 'Nascida de uma parceria estratégica com Appmax, a W3 pagamentos é a solução com maior performance de aprovação de pedidos para ecommerce do brasil. Na w3 pagamentos você garante:',
@@ -115,6 +119,7 @@ const services = [
   {
     icon: <DashboardIcon />,
     logo: '/images/logo-labs.png',
+    logoW: 113,
     logoH: 24,
     title: 'W3 Labs',
     description: 'Tecnologia própria com lançamento previsto para o primeiro trimestre de 2026. Toda a inteligência do ecossistema a um clique de distância.',
@@ -184,6 +189,10 @@ function ServiceCard({ service, id }) {
         <img
           src={service.logo}
           alt={service.title}
+          width={service.logoW}
+          height={service.logoH}
+          loading="lazy"
+          decoding="async"
           style={{ height: `${service.logoH}px`, width: 'auto' }}
         />
       </div>
