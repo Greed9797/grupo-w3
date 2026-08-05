@@ -45,7 +45,7 @@ const departments = [
   },
 ]
 
-const photos = ['/images/sede3.jpg', '/images/sede1.jpg', '/images/sede2.jpg', '/images/sede4.jpg']
+const photos = ['/images/sede3.webp', '/images/sede1.webp', '/images/sede2.webp', '/images/sede4.webp']
 
 export default function Sede() {
   return (
@@ -85,6 +85,10 @@ export default function Sede() {
               <img
                 src={photo}
                 alt={`Sede W3 ${i + 1}`}
+                width="306"
+                height="388"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
