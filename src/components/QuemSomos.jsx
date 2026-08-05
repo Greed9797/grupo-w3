@@ -14,6 +14,8 @@ export default function QuemSomos() {
             <div className="md:w-[387px] flex-shrink-0">
               <img
                 src="/images/quem-somos.webp"
+                srcSet="/images/quem-somos-322.webp 322w, /images/quem-somos.webp 387w"
+                sizes="(max-width: 767px) calc(100vw - 68px), 387px"
                 alt="Grupo W3"
                 width="387"
                 height="387"

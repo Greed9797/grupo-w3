@@ -68,9 +68,9 @@ export default function Cases() {
         <div className="flex flex-col md:flex-row justify-center gap-4">
           {/* Problems */}
           <div className="bg-[#0D0D0D] border border-[#262626] rounded-[13.8px] p-8 w-full md:w-[340px]">
-            <h4 className="text-white text-[20px] md:text-[22px] font-normal mb-6 leading-[1.3]">
+            <h3 className="text-white text-[20px] md:text-[22px] font-normal mb-6 leading-[1.3]">
               Cliente do segmento de E-commerce que já faturava, mas enfrentava:
-            </h4>
+            </h3>
             <ul className="space-y-[14px]">
               {['Margem comprimida', 'Dependência de tráfego', 'Falta de previsibilidade'].map((item, i) => (
                 <li key={i} className="text-[#939393] text-[15px] md:text-[16px] flex items-center gap-3 leading-[1.3]">
@@ -83,9 +83,9 @@ export default function Cases() {
 
           {/* Solutions */}
           <div className="bg-[#0D0D0D] border border-[#262626] rounded-[13.8px] p-8 w-full md:w-[350px]">
-            <h4 className="text-white text-[20px] md:text-[22px] font-normal mb-6 leading-[1.3]">
+            <h3 className="text-white text-[20px] md:text-[22px] font-normal mb-6 leading-[1.3]">
               Após implementação do método e estruturação:
-            </h4>
+            </h3>
             <ul className="space-y-[14px]">
               {['Reorganização financeira', 'Estrutura multi-canal', 'Melhoria em ROAS', 'Escala com controle de margem'].map((item, i) => (
                 <li key={i} className="text-[#939393] text-[15px] md:text-[16px] flex items-center gap-3 leading-[1.3]">

@@ -118,7 +118,7 @@ const services = [
   },
   {
     icon: <DashboardIcon />,
-    logo: '/images/logo-labs.png',
+    logo: '/images/logo-labs.webp',
     logoW: 113,
     logoH: 24,
     title: 'W3 Labs',
