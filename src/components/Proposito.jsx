@@ -1,12 +1,25 @@
+/* Ícones refeitos: os antigos vazavam do viewBox (maleta com width 22 em 24),
+   deixavam traço órfão (capelo) ou repetiam o mesmo desenho em seções
+   diferentes. Todos com 2px de margem do viewBox e ponta arredondada. */
+const iconProps = {
+  width: 26,
+  height: 26,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: '#F55900',
+  strokeWidth: 1.6,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+}
+
 const pillars = [
   {
     title: 'Gerar Previsibilidade',
     description: 'Dados e métricas que eliminam achismos e trazem clareza para o crescimento.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <line x1="18" y1="20" x2="18" y2="10"/>
-        <line x1="12" y1="20" x2="12" y2="4"/>
-        <line x1="6" y1="20" x2="6" y2="14"/>
+      <svg {...iconProps}>
+        <polyline points="3 16.5 9 10.5 13 14.5 21 6.5"/>
+        <polyline points="15 6.5 21 6.5 21 12.5"/>
       </svg>
     )
   },
@@ -14,9 +27,11 @@ const pillars = [
     title: 'Gerar Margem',
     description: 'Otimização financeira para que cada venda contribua com lucro real.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
-        <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9"/>
+        <line x1="8.5" y1="15.5" x2="15.5" y2="8.5"/>
+        <circle cx="9" cy="9" r="1.4"/>
+        <circle cx="15" cy="15" r="1.4"/>
       </svg>
     )
   },
@@ -24,9 +39,9 @@ const pillars = [
     title: 'Gerar Liberdade Estratégica',
     description: 'Autonomia para tomar decisões com base em estrutura sólida.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10"/>
-        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9"/>
+        <polygon points="15.6 8.4 13.4 13.4 8.4 15.6 10.6 10.6"/>
       </svg>
     )
   },
@@ -34,9 +49,10 @@ const pillars = [
     title: 'Estruturar Negócios Reais',
     description: 'Processos, times e sistemas que sustentam a operação a longo prazo.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <rect x="2" y="7" width="22" height="15" rx="2" ry="2"/>
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      <svg {...iconProps}>
+        <rect x="3" y="8" width="18" height="12" rx="2"/>
+        <path d="M8.5 8V6.2A2.2 2.2 0 0 1 10.7 4h2.6a2.2 2.2 0 0 1 2.2 2.2V8"/>
+        <line x1="3" y1="13" x2="21" y2="13"/>
       </svg>
     )
   },
@@ -44,9 +60,9 @@ const pillars = [
     title: 'Profissionalizar Operações',
     description: 'Elevar o nível de gestão e execução do seu e-commerce.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      <svg {...iconProps}>
+        <path d="M12 4 3 8.8l9 4.8 9-4.8-9-4.8Z"/>
+        <path d="M6.5 11.2V16c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-4.8"/>
       </svg>
     )
   },
@@ -86,11 +102,10 @@ export default function Proposito() {
 
 function PillarCard({ pillar }) {
   return (
-    <div className="bg-[#0D0D0D] border border-[#262626] rounded-[11px] p-6 h-full">
-      <div
-        className="w-[48px] h-[48px] rounded-[5px] flex items-center justify-center mb-4"
-        style={{ background: 'rgb(36,20,12)' }}
-      >
+    <div className="bg-[#0D0D0D] border border-[#262626] rounded-[11px] p-6 h-full odm-pillar">
+      {/* Sem a caixa 48×48 marrom (rgb(36,20,12)) — cor fora da paleta e
+          assinatura do feature-grid genérico. O ícone fica solto e maior. */}
+      <div className="odm-pillar__icon mb-4">
         {pillar.icon}
       </div>
       <h3 className="text-white text-[19px] font-semibold mb-3 leading-tight">{pillar.title}</h3>

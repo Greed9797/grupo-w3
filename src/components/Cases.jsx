@@ -11,6 +11,21 @@ const CheckIcon = () => (
   </svg>
 )
 
+const PlayIcon = () => (
+  <svg width="17" height="19" viewBox="0 0 17 19" fill="currentColor" aria-hidden="true">
+    <path d="M16 7.77a2 2 0 0 1 0 3.46L3 18.9A2 2 0 0 1 0 17.17V1.83A2 2 0 0 1 3 .1z"/>
+  </svg>
+)
+
+/* Depoimentos em vídeo. Os posters já trazem a legenda queimada no pixel, por
+   isso nenhum figcaption por cima. Cada card abre o Short em nova aba. */
+const depoimentos = [
+  { poster: '/images/depoimento-1.webp', href: 'https://www.youtube.com/shorts/TqbCf0wx0Bo', alt: 'aumentou em 50% a conta do Mercado Livre' },
+  { poster: '/images/depoimento-2.webp', href: 'https://www.youtube.com/shorts/3A67zFdPMjY', alt: 'crescimento de 100% mês a mês' },
+  { poster: '/images/depoimento-3.webp', href: 'https://www.youtube.com/shorts/6oZ7ZuU7ASs', alt: 'aumentou a receita em mais de R$ 3 milhões' },
+  { poster: '/images/depoimento-4.webp', href: 'https://www.youtube.com/shorts/ChJJWCSxh3I', alt: 'totalmente adaptável ao meu nicho' },
+]
+
 export default function Cases() {
   return (
     <section id="cases" className="bg-black py-12 md:py-20 border-t border-[#242424]">
@@ -23,7 +38,7 @@ export default function Cases() {
 
         {/* Ame Kids card */}
         <div
-          className="relative mx-auto rounded-[12px] border border-[#262626] overflow-hidden mb-12 md:mb-16 flex flex-col md:flex-row"
+          className="relative mx-auto rounded-[12px] border border-[#262626] overflow-hidden mb-12 md:mb-16 flex flex-col md:flex-row odm-case"
           style={{ background: 'rgba(255,255,255,0.10)', maxWidth: '858px' }}
         >
           {/* Image */}
@@ -59,13 +74,36 @@ export default function Cases() {
           </div>
         </div>
 
+        {/* Mural de depoimentos em vídeo */}
+        <h2 id="video-wall-title" className="odm-wall__heading">O que falam sobre nós</h2>
+        <div className="odm-wall" aria-labelledby="video-wall-title">
+          {depoimentos.map((item) => (
+            <figure key={item.href} className="odm-wall__item">
+              <img src={item.poster} alt={`Depoimento de cliente: ${item.alt}`} loading="lazy" decoding="async" />
+              <span className="odm-wall__play" aria-hidden="true"><PlayIcon /></span>
+              {/* Área de clique = card inteiro. Fica acima do poster e do play,
+                  mas o play continua visível porque o link não tem fundo. */}
+              <a
+                className="odm-wall__link"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Assistir depoimento no YouTube: ${item.alt}`}
+              />
+            </figure>
+          ))}
+        </div>
+        {/* Nav do mural: só aparece no mobile, onde o grid vira carrossel */}
+        <div className="odm-gal__nav odm-wall__nav" />
+
         {/* Header 2 */}
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-[30px] md:text-[35px] font-semibold text-white">Caso de Escala Estruturada</h2>
         </div>
 
-        {/* Two case cards — stacked on mobile, side by side on desktop */}
-        <div className="flex flex-col md:flex-row justify-center gap-4">
+        {/* Painel único dividido por dentro (motion.css): dois cards com 340 e
+            350px e raio 13.8 brigavam com o card do case acima. */}
+        <div className="flex flex-col md:flex-row justify-center gap-4 odm-compare">
           {/* Problems */}
           <div className="bg-[#0D0D0D] border border-[#262626] rounded-[13.8px] p-8 w-full md:w-[340px]">
             <h3 className="text-white text-[20px] md:text-[22px] font-normal mb-6 leading-[1.3]">
@@ -99,8 +137,7 @@ export default function Cases() {
 
         {/* Quote */}
         <p className="text-[#939393] text-[15px] md:text-[20px] text-center mt-10 md:mt-12 leading-[1.3]">
-          O diferencial não foi "crescer rápido".<br />
-          Foi crescer com estrutura.
+          O diferencial não foi “crescer rápido”. Foi crescer com estrutura.
         </p>
       </div>
     </section>

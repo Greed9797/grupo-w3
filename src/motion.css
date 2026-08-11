@@ -1,0 +1,866 @@
+/* Camada de refinamento visual + motion do Grupo W3.
+   Escrita contra o DOM real dos componentes; os marcadores .odm-* moram no
+   JSX. Comportamento (reveal, press, carrosséis) vive em src/motion.js. */
+
+/* Emil-style strong curves: the built-in CSS easings are too weak to read
+   as intentional. */
+:root {
+  --odm-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --odm-reveal-duration: 260ms;
+  --odm-press-duration: 140ms;
+}
+
+/* Progressive enhancement: the hidden state is only ever applied by JS
+   (which adds .odm-armed to <html>). No JS, failed script, or crashed
+   bundle → content renders fully visible. */
+.odm-armed .odm-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--odm-reveal-duration) var(--odm-ease-out),
+    transform var(--odm-reveal-duration) var(--odm-ease-out);
+}
+
+.odm-armed .odm-reveal.odm-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Press feedback — the interface confirming it heard the click. Only the
+   :active state changes, so the page at rest is untouched. */
+.odm-armed .odm-press {
+  transition: transform var(--odm-press-duration) var(--odm-ease-out);
+}
+
+.odm-armed .odm-press:active {
+  transform: scale(0.97);
+}
+
+/* The original ships no visible focus ring; anything that now reacts to
+   press should also be reachable by keyboard. Accent is the site's real
+   #f55900, read from its production CSS. */
+.odm-armed .odm-press:focus-visible {
+  outline: 2px solid #f55900;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Impressão e captura de página inteira não rolam, então o observer
+   nunca dispara e o conteúdo sairia em branco. */
+@media print {
+  .odm-armed .odm-reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* --- harmonização do fechamento -------------------------------------
+   Escopo estrito: só #contato. O original aninha um card #080808 dentro
+   de uma seção #000 — diferença de luminância ~0.003, invisível, e o
+   raio de 13.8px é a única coisa que ele produz. O max-width de 551px
+   desse card é o que força o título a 3 linhas e deixa "Estrutura."
+   órfã. Removendo o card: uma superfície em vez de duas, e medida
+   suficiente para o título fechar em 2 linhas. */
+#contato > div > div {
+  background: transparent;
+  border-radius: 0;
+  max-width: none;
+  padding: 0;
+}
+
+#contato h2 {
+  /* px, não ch: ch resolveria no font-size do container e estrangularia
+     a coluna de novo. */
+  max-width: 640px;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+/* --- harmonização do "Caso de Escala Estruturada" --------------------
+   Escopo estrito: o bloco de comparação dentro de #cases (heading, par
+   de colunas e frase de fecho). O original usa dois cards #0D0D0D com
+   larguras fixas de 340px e 350px — simetria pretendida, execução
+   assimétrica por 10px acidentais — e raio 13.8px que briga com o 12px
+   do card do case imediatamente acima. Trocando o cromo de card por um
+   fio vertical: colunas de largura igual, um raio a menos em conflito,
+   e a medida passa a bater com o card de cima. */
+/* Um painel só, dividido por dentro. Sem superfície nenhuma o bloco
+   perdia presença e sumia no preto; com dois cards ele era cromo
+   duplicado com larguras desiguais. Largura, raio e borda batem com o
+   card do case imediatamente acima, então as duas peças da seção leem
+   como par em vez de duas medidas soltas. */
+.odm-compare {
+  max-width: 858px; /* mesma largura do card do case acima */
+  margin-inline: auto;
+  gap: 0;
+  background: #0d0d0d;
+  border: 1px solid #262626;
+  border-radius: 12px; /* mesmo raio do card acima, resolve o 13.8 vs 12 */
+  padding: 32px;
+}
+
+.odm-compare > div {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  width: auto;
+  flex: 1 1 0;
+  padding: 0 32px;
+}
+
+.odm-compare > div:first-child { padding-left: 0; }
+.odm-compare > div:last-child { padding-right: 0; }
+
+/* 20px, não 22: com o padding do painel a coluna fica em 396px e a 22px
+   o título da esquerda voltava a 3 linhas contra 2 da direita. */
+.odm-compare h3 { font-size: 20px; }
+
+.odm-compare > div + div {
+  border-left: 1px solid #262626;
+}
+
+@media (max-width: 767px) {
+  /* Empilhado no mobile o fio vertical não faz sentido: vira horizontal. */
+  .odm-compare { padding: 24px; }
+  .odm-compare > div { padding: 0; }
+  .odm-compare > div + div {
+    border-left: 0;
+    border-top: 1px solid #262626;
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+}
+
+/* --- hero -------------------------------------------------------------
+   O bloco tinha 710px de largura para um título de 55px bold: sobravam
+   ~630px de medida, o navegador partia "E-commerces" no hífen e a
+   palavra destacada — justamente a que carrega o laranja — ficava
+   cortada em duas linhas, com "no Brasil" órfão. Medida maior, hífen
+   não separável e text-wrap: balance resolvem a quebra sem apelar para
+   nowrap. O tracking negativo é o que falta em toda display grande:
+   a 55px o espaçamento padrão do Inter parece inflado. */
+.odm-hero__title {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* 700px fecha a frase em duas linhas; a 620 sobrava "sistema integrado."
+   sozinho numa terceira. */
+.odm-hero__sub {
+  max-width: 700px;
+  text-wrap: pretty;
+}
+
+/* Duas provas na primeira linha, a terceira centralizada embaixo.
+   As três medem 230 + 266 + 164 (+12 de gap) = 684px; travar em 560
+   deixa passar só as duas primeiras e joga "Operação nacional." para
+   baixo, centralizada pelo justify-center — a composição em pirâmide
+   que fecha o bloco em vez de esticá-lo numa fileira só. */
+.odm-hero__proof {
+  max-width: 560px;
+}
+
+/* --- cards de pilar (propósito / diferenciais) ------------------------
+   Dois problemas juntos. Os SVGs: a maleta tinha rect x=2 width=22 num
+   viewBox de 24 e vazava pela direita; o "users" era um arco solto mais
+   uma bolinha sem cabeça; o capelo deixava um traço órfão à direita; e
+   "Previsibilidade" e "Cultura de métricas" usavam o MESMO ícone em
+   seções diferentes. Todos refeitos com margem de 2px do viewBox,
+   ponta arredondada e um desenho por ideia.
+   O visual: o quadradinho 48×48 de fundo rgb(36,20,12) — marrom fora da
+   paleta — é a assinatura do feature-grid genérico. O ícone fica solto,
+   maior, alinhado ao título. */
+/* Sem a caixa, 26px sumia no canto do card: 30px devolve presença ao
+   ícone sem precisar de fundo. */
+.odm-pillar__icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.odm-pillar__icon {
+  margin-bottom: 18px;
+}
+
+.odm-pillar h3 {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+/* 13.4px/1.3 era corpo apertado em medida curta; 14px/1.5 lê. */
+.odm-pillar p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* --- toque no mobile --------------------------------------------------
+   Auditoria a 390 e 360px: o menu hambúrguer (40×40), a seta de descida
+   do hero (32×32) e as setas da galeria (40×40) ficavam abaixo do alvo
+   mínimo de 44px. Nada disso é visual — é a diferença entre acertar e
+   errar o toque. As classes utilitárias do bundle são pré-compiladas,
+   então o ajuste mora aqui. */
+@media (max-width: 767px) {
+  nav button[aria-label="Abrir menu"] {
+    width: 44px;
+    height: 44px;
+  }
+
+  a[aria-label="Conhecer nossos serviços"] {
+    width: 44px;
+    height: 44px;
+  }
+
+}
+
+/* --- galeria da sede: carrossel de verdade ---------------------------
+   Antes: grid fixo de 4 fotos e, embaixo, seis pontinhos (1 laranja + 5
+   brancos) sem handler nenhum — controle morto anunciando uma paginação
+   que não existia, ainda por cima com 6 pontos para 4 fotos.
+   Agora o track rola com scroll-snap, e os pontos são calculados a
+   partir do scroll real: quantidade de páginas = scrollWidth/clientWidth.
+   São 4 fotos; mostrando 3 por vez no desktop, há o que navegar. */
+.odm-gal {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.odm-gal::-webkit-scrollbar { display: none; }
+
+.odm-gal__slide {
+  flex: 0 0 calc((100% - 24px) / 3);
+  scroll-snap-align: start;
+}
+
+.odm-gal:focus-visible {
+  outline: 2px solid #f55900;
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.odm-gal__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.odm-gal__arrow {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #262626;
+  border-radius: 999px;
+  background: transparent;
+  color: #f55900;
+  cursor: pointer;
+  transition:
+    border-color 160ms var(--odm-ease-out),
+    color 160ms var(--odm-ease-out);
+}
+
+.odm-gal__arrow:hover:not(:disabled) {
+  border-color: #f55900;
+  color: #ff7a33;
+}
+
+.odm-gal__arrow:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Fim do trilho: único estado em que o contraste pode cair. */
+.odm-gal__arrow:disabled {
+  color: #4a4a4a;
+  border-color: #1c1c1c;
+  cursor: default;
+}
+
+.odm-gal__dots {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* O alvo de 44px é a altura real do botão, não um ::before flutuante:
+   a versão anterior desenhava uma área de 44×44 deslocada em volta de
+   um ponto de 8px, e as áreas de pontos vizinhos se sobrepunham — o
+   último ponto ficava por cima e roubava o clique do anterior. Agora
+   cada botão ocupa a própria faixa, lado a lado, sem invasão. */
+.odm-gal__dot {
+  width: 28px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* O ponto visual mora dentro do botão. */
+.odm-gal__dot::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background-color 160ms var(--odm-ease-out), width 160ms var(--odm-ease-out);
+}
+
+.odm-gal__dot[aria-current="true"]::before {
+  width: 20px;
+  background: #f55900;
+}
+
+.odm-gal__dot:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* --- menu mobile ------------------------------------------------------
+   Três defeitos que só aparecem com o painel aberto (por isso a
+   auditoria com o menu fechado não pegava): o fundo a 95% com blur de
+   4px deixava o título do hero atravessar os links; os itens ficavam em
+   #939393, cinza de texto secundário usado como navegação principal; e
+   cada link tinha ~22px de altura, metade do alvo de toque. */
+.odm-mnav {
+  background: #000000;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  gap: 0;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.odm-mnav > a:not([style]) {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  color: #f2f2f2;
+  font-size: 16px;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.odm-mnav > a:not([style]):last-of-type { border-bottom: 0; }
+
+.odm-mnav > a:not([style]):hover,
+.odm-mnav > a:not([style]):focus-visible {
+  color: #ffffff;
+}
+
+.odm-mnav > a:focus-visible {
+  outline: 2px solid #f55900;
+  outline-offset: -2px;
+}
+
+/* O CTA continua sendo o único botão sólido do painel. */
+.odm-mnav > a[style] {
+  margin-top: 16px;
+  min-height: 48px;
+}
+
+@media (max-width: 1023px) {
+  .odm-gal__slide { flex-basis: calc((100% - 12px) / 2); }
+}
+
+@media (max-width: 767px) {
+  /* Peek de 14%: a borda da próxima foto aparecendo é o que avisa que
+     dá para arrastar. */
+  .odm-gal__slide { flex-basis: 86%; }
+
+  /* Depois da regra base de 40px, senão perde por ordem de cascata. */
+  .odm-gal__arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* --- nossa estrutura / sede ------------------------------------------
+   A faixa de capacidades era a área mais morta da página: cinco pílulas
+   #0D0D0D sobre preto, borda #262626 e ícone branco fino — quase
+   invisíveis. A cor entra onde ela informa: um véu do próprio laranja
+   da marca nas pílulas (6% de fundo, 28% de borda) e o ícone em cheio.
+   Nada de cinza novo — tudo derivado de #f55900. */
+/* Sem hover: são rótulos, não controles. Estado de mouse em elemento
+   que não clica é botão morto disfarçado. */
+.odm-hq__pill {
+  background: rgba(245, 89, 0, 0.06);
+  border-color: rgba(245, 89, 0, 0.28);
+}
+
+.odm-hq__pill svg {
+  stroke: #f55900;
+}
+
+.odm-hq__pill span {
+  color: #f2f2f2;
+}
+
+/* O texto de apoio vinha 20px com entrelinha 1.3 — três linhas
+   centralizadas e coladas. */
+.odm-hq__lead,
+.odm-hq__body {
+  line-height: 1.5;
+}
+
+/* A frase de abertura carrega o único número verificável do bloco; sobe
+   de cinza para branco para ser lida primeiro. */
+.odm-hq__lead {
+  color: #f2f2f2;
+}
+
+.odm-hq__figure {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* --- quem somos (#quem-somos) ----------------------------------------
+   Três parágrafos de 15px com entrelinha 1.3, todos no mesmo cinza e no
+   mesmo peso: seis linhas coladas sem nada dizendo por onde começar. É
+   disso que vem o "ruim de ler". A correção é de tipografia, não de
+   layout — entrelinha, uma linha de abertura com hierarquia, e a foto
+   encostando na borda como no card do case, para os dois blocos falarem
+   a mesma língua. */
+/* A foto é quadrada (387×387) e o texto pede ~500px de altura: sangrar
+   numa coluna retrato só oferece dois finais ruins — cortar as pessoas
+   das pontas (cover) ou deixar faixa de fundo em cima e embaixo
+   (contain). Sem uma foto em enquadramento retrato, o enquadramento com
+   respiro é o certo: a imagem inteira, centrada na coluna, com a mesma
+   margem de todos os lados. */
+.odm-about__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odm-about__media img {
+  width: 100%;
+  max-width: 387px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* A régua laranja solta no topo do card não marcava nada — vira o
+   marcador do próprio título, alinhada ao texto. */
+.odm-about__rule { display: none; }
+
+.odm-about__title {
+  margin-bottom: 20px;
+}
+
+.odm-about__title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 16px;
+  background: #f55900;
+}
+
+/* 15px/1.3 → 16px/1.6: a medida de linha continua a mesma, o texto
+   passa a ter ar entre as linhas. */
+.odm-about__text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.odm-about__text p + p { margin-top: 16px; }
+
+/* Linha de abertura carrega a definição da empresa — sobe de corpo e de
+   cor para ser lida primeiro. */
+.odm-about__text p.odm-about__lead {
+  color: #f2f2f2;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .odm-about__media,
+  .odm-about__text {
+    width: 100%;
+  }
+
+  .odm-about__media img {
+    /* Empilhado a largura já é a do card: 1:1 sem teto de 387px. */
+    max-width: none;
+  }
+
+  .odm-about__text p.odm-about__lead { font-size: 17px; }
+}
+
+/* --- cards de unidade (#solucoes) ------------------------------------
+   Cinco barras laranja sólidas idênticas na mesma tela era o problema:
+   nenhuma delas conseguia ser a ação principal, e a repetição do mesmo
+   gradiente em cinco larguras cheias é a assinatura de página gerada.
+   Como são cinco destinos distintos (não a mesma ação repetida), a saída
+   não é escolher uma e apagar quatro: é rebaixar as cinco a link de
+   texto e devolver o botão sólido ao "Fale conosco" do topo, que é a
+   conversão real da página. */
+/* Tipografia: o card vinha com 12px/1.3 na descrição (apertado) e
+   12px/22.5px nos bullets (solto demais) — duas medidas brigando dentro
+   do mesmo bloco. Uma escala só, 13px/1.5, resolve as duas.
+   Os ajustes moram aqui e não em classe utilitária nova: o Tailwind
+   deste bundle é pré-compilado, classe inventada não existe no CSS. */
+.odm-sol > p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.odm-sol li {
+  font-size: 13px;
+  gap: 10px;
+}
+
+.odm-sol li > span:first-child { margin-top: 4px; }
+
+.odm-sol-cta {
+  padding-top: 16px;
+  border-top: 1px solid #262626;
+  color: #f55900; /* 5.4:1 sobre o #0D0D0D do card */
+  font-size: 11.5px;
+  transition:
+    color 160ms var(--odm-ease-out),
+    border-top-color 160ms var(--odm-ease-out);
+}
+
+/* Hover clareia o laranja (L +0.08 em OKLch) — contraste sobe, nunca
+   cai, e a borda acompanha para o alvo inteiro responder. */
+.odm-sol:hover .odm-sol-cta,
+.odm-sol-cta:hover,
+.odm-sol-cta:focus-visible {
+  color: #ff7a33;
+  border-top-color: #f55900;
+}
+
+.odm-sol-cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* A seta é o que indica "vai para outro lugar": anda no hover em vez de
+   piscar cor. */
+.odm-sol-cta svg {
+  transition: transform 160ms var(--odm-ease-out);
+}
+
+.odm-sol:hover .odm-sol-cta svg,
+.odm-sol-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.odm-sol {
+  transition: border-color 160ms var(--odm-ease-out);
+}
+
+.odm-sol:hover { border-color: #3a3a3a; }
+
+@media (max-width: 767px) {
+  /* Link de texto no dedo precisa de alvo de 44px — o filete continua
+     marcando o topo, o respiro extra vai para baixo. */
+  .odm-sol-cta {
+    min-height: 44px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odm-sol:hover .odm-sol-cta svg,
+  .odm-sol-cta:hover svg { transform: none; }
+}
+
+/* --- card do case Ame Kids (#cases) ---------------------------------
+   O card estava quase invisível: fundo branco a 10% sobre preto, foto
+   de 387px flutuando com 42px de respiro de cada lado, e as quatro
+   provas em cinza #939393 do mesmo peso da descrição. Nada dizia "esta
+   é a prova principal". A ênfase vem de três movimentos, não de
+   decoração: a foto passa a sangrar e virar metade do card, o nome
+   ganha escala, e as provas sobem de cinza para branco com o check em
+   laranja — o único uso de laranja do bloco. */
+/* O fundo do card vem de style inline no bundle (rgba(255,255,255,.1)),
+   então não se sobrescreve por CSS — a separação do preto vem da
+   sombra, não de trocar a cor. */
+.odm-case {
+  min-height: 420px;
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, 0.9);
+}
+
+/* Coluna da foto: sem padding, altura cheia. O overflow:hidden do card
+   já recorta a imagem no raio de 12px, então a foto encosta na borda. */
+.odm-case > div:first-child {
+  width: 46%;
+  padding: 0;
+  align-self: stretch;
+}
+
+.odm-case > div:first-child img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 0;
+  object-fit: cover;
+  /* 42% mantém o rosto acima do centro óptico ao cortar em retrato. */
+  object-position: 50% 42%;
+}
+
+.odm-case > div:last-child {
+  width: 54%;
+  padding: 44px 42px;
+}
+
+.odm-case h3 {
+  font-size: 38px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+/* Descrição segue secundária — é contexto, não prova. */
+.odm-case > div:last-child > p {
+  max-width: 46ch;
+}
+
+.odm-case ul {
+  margin: 22px 0;
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  padding: 18px 0;
+}
+
+.odm-case ul li {
+  color: #f2f2f2;
+  font-size: 16px;
+  gap: 12px;
+}
+
+.odm-case ul li svg {
+  width: 17px;
+  height: 17px;
+  color: #f55900;
+}
+
+/* Frase de fecho é o argumento, não rodapé: sobe para branco. */
+.odm-case > div:last-child > p:last-child {
+  color: #f2f2f2;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+@media (max-width: 767px) {
+  /* Empilhado a foto vira faixa no topo; largura em % não faz sentido. */
+  .odm-case { min-height: 0; }
+
+  .odm-case > div:first-child,
+  .odm-case > div:last-child {
+    width: 100%;
+  }
+
+  .odm-case > div:first-child img {
+    height: 260px;
+    min-height: 0;
+  }
+
+  .odm-case > div:last-child { padding: 24px; }
+
+  .odm-case h3 { font-size: 28px; }
+}
+
+/* --- mural de depoimentos em vídeo (#cases) --------------------------
+   Estrutura da referência enviada: 4 cards verticais 9:16, play
+   centralizado, legenda ao pé com trecho destacado. Cor: nosso #f55900
+   no lugar do dourado da referência. Largura travada em 858px, a mesma
+   do card do case e do painel de comparação, para a seção não ganhar
+   uma terceira medida. */
+.odm-wall__heading {
+  max-width: 858px;
+  margin: 64px auto 24px;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.odm-wall {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 858px;
+  margin: 0 auto 72px;
+}
+
+.odm-wall__item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 9 / 16; /* proporção real dos posters: 941x1672 */
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 1px solid #262626;
+  border-radius: 12px; /* mesmo raio do card do case e do painel */
+}
+
+.odm-wall__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms var(--odm-ease-out);
+}
+
+.odm-wall__item:hover img { transform: scale(1.03); }
+
+/* Área de clique = card inteiro. Fica acima do poster e do play, mas o
+   play permanece visível porque o link não tem fundo próprio. */
+.odm-wall__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.odm-wall__link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -4px;
+}
+
+.odm-wall__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #f55900;
+  /* Triângulo preto sobre laranja: 6.31:1, o mesmo par dos CTAs. */
+  color: #000;
+  transition: background-color 160ms var(--odm-ease-out);
+}
+
+/* Hover/foco clareiam o laranja (L +0.08 em OKLch); o triângulo segue
+   preto, então o contraste sobe em vez de cair. */
+.odm-wall__item:hover .odm-wall__play,
+.odm-wall__item:has(.odm-wall__link:focus-visible) .odm-wall__play {
+  background: #ff7a33;
+}
+
+.odm-wall__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 14px 14px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #f2f2f2;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.odm-wall__caption b { color: #f55900; font-weight: 600; }
+
+/* Estado honesto enquanto os vídeos não chegaram: play apagado, sem
+   handler de clique, e a legenda diz o que falta. Nada de controle
+   morto fingindo funcionar. */
+.odm-wall__item[data-pending] .odm-wall__play {
+  background: #262626;
+  color: #939393;
+}
+
+.odm-wall__item[data-pending] .odm-wall__caption {
+  color: #939393;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  /* 4 cards verticais não cabem em 390px: vira carrossel com snap, e a
+     rolagem fica dentro do mural, não na página. */
+  .odm-wall__heading {
+    margin-top: 48px;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+  .odm-wall {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* 78% e não 68%: a 68% o card 9:16 ficava estreito demais e a
+       legenda queimada no poster virava letra miúda. O que sobra ainda
+       mostra a borda do próximo — é o peek que avisa que rola. */
+    grid-auto-columns: 78%;
+    /* A separação até o próximo bloco passou para a nav, que só existe
+       aqui no mobile — no desktop o mural é grid de 4 colunas, não
+       rola, e a nav se esconde sozinha mantendo os 72px originais. */
+    margin-bottom: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* O swipe no mural não arrasta a página nem dispara o gesto de
+       voltar do navegador. */
+    overscroll-behavior-x: contain;
+    /* Barra nativa fora: no iOS ela some sozinha, no Android/desktop
+       ficava uma faixa clara cruzando o bloco. */
+    scrollbar-width: none;
+    /* Sangra até a borda da tela e devolve o gutter por dentro, senão o
+       primeiro e o último card ficam com respiro diferente do resto da
+       seção. */
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-padding-left: 20px;
+  }
+
+  .odm-wall::-webkit-scrollbar { display: none; }
+
+  .odm-wall__item {
+    /* start alinha o card ao gutter da seção; center deixava o primeiro
+       card entrando torto em relação ao título. */
+    scroll-snap-align: start;
+    /* Um flick rápido avança um card, não três. */
+    scroll-snap-stop: always;
+  }
+
+  .odm-wall__nav { margin-bottom: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odm-wall__item:hover img { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Reduced motion means gentler, not none: keep the opacity fade that
+     explains "new content arrived", drop all positional movement. */
+  .odm-armed .odm-reveal {
+    transform: none;
+    transition: opacity 200ms var(--odm-ease-out);
+  }
+
+  .odm-armed .odm-reveal.odm-in {
+    transform: none;
+  }
+
+  .odm-armed .odm-press:active {
+    transform: none;
+  }
+
+  /* The original animates the scroll hint with an infinite bounce and no
+     opt-out. Infinite motion is exactly what this query exists for. */
+  .animate-bounce {
+    animation: none !important;
+  }
+}

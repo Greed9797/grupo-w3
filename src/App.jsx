@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import './App.css'
+import './motion.css'
+import { initMotion } from './motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import QuemSomos from './components/QuemSomos'
@@ -11,6 +14,8 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 
 function App() {
+  useEffect(() => initMotion(), [])
+
   return (
     <>
       <Navbar />

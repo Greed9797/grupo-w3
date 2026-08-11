@@ -1,12 +1,27 @@
+/* Mesmo tratamento dos pilares de propósito: um desenho por ideia (antes
+   "Cultura de métricas" repetia o ícone de "Previsibilidade"), margem de 2px do
+   viewBox e ponta arredondada. */
+const iconProps = {
+  width: 26,
+  height: 26,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: '#F55900',
+  strokeWidth: 1.6,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+}
+
 const diferenciais = [
   {
     title: 'Fundadores operadores',
     description: 'Liderança que vive a operação diariamente.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        <path d="M14 10a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/>
+      <svg {...iconProps}>
+        <circle cx="9" cy="8" r="3.2"/>
+        <path d="M3.5 20v-1.4A4.6 4.6 0 0 1 8.1 14h1.8a4.6 4.6 0 0 1 4.6 4.6V20"/>
+        <path d="M16.2 8.4a3 3 0 0 1 0 5.4"/>
+        <path d="M18 20v-1.4a4.6 4.6 0 0 0-1.6-3.5"/>
       </svg>
     )
   },
@@ -14,11 +29,14 @@ const diferenciais = [
     title: 'Ecossistema completo',
     description: 'Todas as soluções integradas num só lugar.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <rect x="2" y="2" width="9" height="9" rx="1"/>
-        <rect x="13" y="2" width="9" height="5" rx="1"/>
-        <rect x="13" y="11" width="9" height="11" rx="1"/>
-        <rect x="2" y="15" width="9" height="7" rx="1"/>
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="3"/>
+        <circle cx="5" cy="5" r="2"/>
+        <circle cx="19" cy="5" r="2"/>
+        <circle cx="12" cy="20" r="2"/>
+        <line x1="6.5" y1="6.5" x2="9.9" y2="9.9"/>
+        <line x1="17.5" y1="6.5" x2="14.1" y2="9.9"/>
+        <line x1="12" y1="15" x2="12" y2="18"/>
       </svg>
     )
   },
@@ -26,10 +44,13 @@ const diferenciais = [
     title: 'Time interno estruturado',
     description: 'Mais de 30 profissionais dedicados.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+      <svg {...iconProps}>
+        <circle cx="12" cy="7" r="3"/>
+        <path d="M6.6 20v-1.1a5.4 5.4 0 0 1 10.8 0V20"/>
+        <circle cx="4.6" cy="10.6" r="2"/>
+        <path d="M2 20v-1.1A3.6 3.6 0 0 1 4.6 15.4"/>
+        <circle cx="19.4" cy="10.6" r="2"/>
+        <path d="M22 20v-1.1a3.6 3.6 0 0 0-2.6-3.5"/>
       </svg>
     )
   },
@@ -37,9 +58,10 @@ const diferenciais = [
     title: 'Tecnologia própria',
     description: 'SaaS em desenvolvimento com IA integrada.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <polyline points="16 18 22 12 16 6"/>
-        <polyline points="8 6 2 12 8 18"/>
+      <svg {...iconProps}>
+        <polyline points="9.2 7.5 4.5 12 9.2 16.5"/>
+        <polyline points="14.8 7.5 19.5 12 14.8 16.5"/>
+        <line x1="13.2" y1="5" x2="10.8" y2="19"/>
       </svg>
     )
   },
@@ -47,10 +69,11 @@ const diferenciais = [
     title: 'Cultura de métricas',
     description: 'Decisões baseadas em dados reais.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <line x1="18" y1="20" x2="18" y2="10"/>
-        <line x1="12" y1="20" x2="12" y2="4"/>
-        <line x1="6" y1="20" x2="6" y2="14"/>
+      <svg {...iconProps}>
+        <line x1="3" y1="20" x2="21" y2="20"/>
+        <line x1="6.5" y1="20" x2="6.5" y2="13"/>
+        <line x1="12" y1="20" x2="12" y2="8.5"/>
+        <line x1="17.5" y1="20" x2="17.5" y2="4.5"/>
       </svg>
     )
   },
@@ -58,9 +81,12 @@ const diferenciais = [
     title: 'Estrutura física',
     description: 'Sede consolidada em Blumenau – SC.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
+      <svg {...iconProps}>
+        <path d="M4 20.5V9.2L12 4.5l8 4.7v11.3"/>
+        <line x1="3" y1="20.5" x2="21" y2="20.5"/>
+        <rect x="10.2" y="15" width="3.6" height="5.5" rx="0.6"/>
+        <rect x="6.8" y="10.8" width="2.6" height="2.6" rx="0.5"/>
+        <rect x="14.6" y="10.8" width="2.6" height="2.6" rx="0.5"/>
       </svg>
     )
   }
@@ -82,11 +108,8 @@ export default function Diferenciais() {
         {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {diferenciais.map((item, index) => (
-            <div key={index} className="bg-[#0D0D0D] border border-[#262626] rounded-[11.3px] p-6">
-              <div
-                className="w-[48px] h-[48px] rounded-[5px] flex items-center justify-center mb-4"
-                style={{ background: 'rgb(36,20,12)' }}
-              >
+            <div key={index} className="bg-[#0D0D0D] border border-[#262626] rounded-[11.3px] p-6 odm-pillar">
+              <div className="odm-pillar__icon mb-4">
                 {item.icon}
               </div>
               <h3 className="text-white text-[19.3px] font-semibold mb-2 leading-tight">{item.title}</h3>

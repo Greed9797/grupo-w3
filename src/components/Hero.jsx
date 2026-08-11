@@ -21,7 +21,8 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,1) 100%)',
+          background:
+            'radial-gradient(70% 55% at 50% 52%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 60%, rgba(0,0,0,0) 100%), linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,1) 100%)',
         }}
       />
 
@@ -38,18 +39,20 @@ export default function Hero() {
       {/* Content */}
       <div
         className="relative z-10 flex flex-col items-center text-center px-6 md:px-10 w-full mx-auto"
-        style={{ maxWidth: '710px', paddingTop: '20px', paddingBottom: '20px' }}
+        style={{ maxWidth: '940px', paddingTop: '20px', paddingBottom: '20px' }}
       >
+        {/* E‑commerces com hífen não separável (U+2011): a 55px o navegador
+            partia justamente a palavra que carrega o acento laranja. */}
         <h1
-          className="text-white leading-[1.15] mb-5"
+          className="text-white leading-[1.15] mb-5 odm-hero__title"
           style={{ fontSize: 'clamp(40px, 5.5vw, 55px)', fontWeight: 700 }}
         >
           Grupo W3: O Ecossistema que mais transforma{' '}
-          <span style={{ color: '#F55900' }}>E-commerces</span> no Brasil
+          <span style={{ color: '#F55900' }}>E‑commerces</span> no Brasil
         </h1>
 
         <p
-          className="text-white leading-[1.4] mb-4"
+          className="text-white leading-[1.4] mb-4 odm-hero__sub"
           style={{ fontSize: 'clamp(15px, 2vw, 20px)', fontWeight: 400 }}
         >
           Transformamos vidas através do e-commerce, combinando estratégia,
@@ -57,7 +60,7 @@ export default function Hero() {
         </p>
 
         {/* Info badges — stacked on mobile, row on desktop */}
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-4">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-4 odm-hero__proof">
           <div
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
             style={{ background: 'rgba(13,13,13,0.85)', border: '1px solid rgba(38,38,38,0.9)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }}
@@ -66,7 +69,7 @@ export default function Hero() {
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#F55900"/>
               <circle cx="12" cy="10" r="3" stroke="#F55900"/>
             </svg>
-            <span style={{ color: '#fff', fontSize: 'clamp(10px, 1.2vw, 12px)' }}>Sede física em Blumenau – SC.</span>
+            <span style={{ color: '#fff', fontSize: 'clamp(12px, 1.2vw, 13px)' }}>Sede física em Blumenau – SC.</span>
           </div>
           <div
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
@@ -77,7 +80,7 @@ export default function Hero() {
               <circle cx="9" cy="7" r="4" stroke="#F55900"/>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#F55900"/>
             </svg>
-            <span style={{ color: '#fff', fontSize: 'clamp(10px, 1.2vw, 12px)' }}>Equipe com mais de 30 profissionais.</span>
+            <span style={{ color: '#fff', fontSize: 'clamp(12px, 1.2vw, 13px)' }}>Equipe com mais de 30 profissionais.</span>
           </div>
           <div
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
@@ -88,7 +91,7 @@ export default function Hero() {
               <line x1="2" y1="12" x2="22" y2="12" stroke="#F55900"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#F55900"/>
             </svg>
-            <span style={{ color: '#fff', fontSize: 'clamp(10px, 1.2vw, 12px)' }}>Operação nacional.</span>
+            <span style={{ color: '#fff', fontSize: 'clamp(12px, 1.2vw, 13px)' }}>Operação nacional.</span>
           </div>
         </div>
 

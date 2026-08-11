@@ -131,7 +131,6 @@ const services = [
       { rest: 'Implementação do método W3 pra escalar suas vendas' },
     ],
     cta: 'Conhecer o W3 Labs',
-    badge: 'Em desenvolvimento',
   },
 ]
 
@@ -173,17 +172,7 @@ export default function Solucoes() {
 
 function ServiceCard({ service, id }) {
   return (
-    <div id={id} className="relative bg-[#0D0D0D] border border-[#262626] rounded-[9px] p-6 flex flex-col h-full">
-      {/* Badge */}
-      {service.badge && (
-        <div
-          className="absolute -top-3 right-4 text-white text-[11px] font-bold px-4 py-1 rounded-full"
-          style={{ background: 'linear-gradient(90deg, #F55900, #F47917)' }}
-        >
-          {service.badge}
-        </div>
-      )}
-
+    <div id={id} className="relative bg-[#0D0D0D] border border-[#262626] rounded-[9px] p-6 flex flex-col h-full odm-sol">
       {/* Brand logo */}
       <div className="mb-4">
         <img
@@ -203,8 +192,8 @@ function ServiceCard({ service, id }) {
       {/* Bullets */}
       <ul className="space-y-[10px] mb-5 flex-1">
         {service.bullets.map((bullet, i) => (
-          <li key={i} className="text-[#939393] text-[12px] flex items-start gap-2" style={{ lineHeight: '22.5px' }}>
-            <span className="flex-shrink-0 mt-[5px]"><CheckIcon /></span>
+          <li key={i} className="text-[#939393] text-[12px] flex items-start gap-2" style={{ lineHeight: 1.5 }}>
+            <span className="flex-shrink-0"><CheckIcon /></span>
             <span>
               {bullet.bold && <span className="text-white font-semibold">{bullet.bold}</span>}
               {bullet.rest}
@@ -213,11 +202,12 @@ function ServiceCard({ service, id }) {
         ))}
       </ul>
 
-      {/* CTA Button */}
+      {/* CTA — link de texto, não botão sólido: cinco barras laranja idênticas
+          na mesma tela impedem qualquer uma de ser a ação principal. O botão
+          sólido volta a ser exclusivo do "Fale conosco". Estilo em motion.css. */}
       <a
         href="https://api.whatsapp.com/send/?phone=5568992523482&text&type=phone_number&app_absent=0"
-        className="flex items-center justify-center gap-2 text-[#F2F2F2] font-bold uppercase tracking-wide py-[14px] rounded-[10.9px] transition-opacity hover:opacity-90 mt-auto"
-        style={{ background: 'linear-gradient(90deg, #F55900, #F47917)', fontSize: '10.86px' }}
+        className="odm-sol-cta flex items-center gap-2 font-bold uppercase tracking-wide mt-auto"
       >
         {service.cta}
         <ArrowIcon />

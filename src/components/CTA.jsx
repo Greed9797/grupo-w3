@@ -4,7 +4,10 @@ export default function CTA() {
       <div className="max-w-[1280px] mx-auto px-5 md:px-10">
         <div className="bg-[#080808] rounded-[13.8px] py-12 md:py-16 px-6 md:px-10 text-center max-w-[551px] mx-auto">
           <h2 className="text-[30px] md:text-[50px] font-semibold text-white leading-[1.3] mb-8 md:mb-10 max-w-[551px] mx-auto">
-            O Ecossistema W3 representa: <span style={{ color: '#F55900' }}>Estrutura.</span>
+            {/* Sem os dois-pontos a maiúscula deixa de fazer sentido em pt-BR;
+                o card interno é neutralizado em motion.css e o título fecha em
+                2 linhas em vez de deixar "Estrutura." órfã na terceira. */}
+            O Ecossistema W3 representa <span style={{ color: '#F55900' }}>estrutura.</span>
           </h2>
 
           <a

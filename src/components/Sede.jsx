@@ -55,10 +55,10 @@ export default function Sede() {
         <div className="text-center max-w-[699px] mx-auto mb-10 md:mb-12">
           <p className="text-[#F55900] text-[12px] font-medium uppercase tracking-widest mb-4">nossa estrutura</p>
           <h2 className="text-[30px] md:text-[35px] font-semibold text-white mb-5 md:mb-6">Nossa sede em Blumenau - SC</h2>
-          <p className="text-[#939393] text-[15px] md:text-[20px] leading-[1.3]">
-            Com mais de 30 colaboradores, nossa operação está baseada em Blumenau, um dos polos empresariais mais fortes do Sul do Brasil.
+          <p className="text-[#939393] text-[15px] md:text-[20px] leading-[1.3] odm-hq__lead">
+            Com <strong className="odm-hq__figure">mais de 30 colaboradores</strong>, nossa operação está baseada em Blumenau, um dos polos empresariais mais fortes do Sul do Brasil.
           </p>
-          <p className="text-[#939393] text-[15px] md:text-[20px] leading-[1.3] mt-4">
+          <p className="text-[#939393] text-[15px] md:text-[20px] leading-[1.3] mt-4 odm-hq__body">
             Acreditamos em estrutura física. Acreditamos em time presente. Acreditamos em cultura construída no ambiente. A sede da W3 concentra:
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function Sede() {
         {/* Department pills */}
         <div className="flex flex-wrap justify-center gap-3 mb-5 md:mb-6">
           {departments.map((dept, i) => (
-            <div key={i} className="flex items-center gap-2 bg-[#0D0D0D] border border-[#262626] rounded-full px-4 md:px-5 py-2 md:py-3">
+            <div key={i} className="flex items-center gap-2 bg-[#0D0D0D] border border-[#262626] rounded-full px-4 md:px-5 py-2 md:py-3 odm-hq__pill">
               {dept.icon}
               <span className="text-white text-[14px] md:text-[15px]">{dept.label}</span>
             </div>
@@ -78,10 +78,12 @@ export default function Sede() {
           Aqui, estratégia não é remota da realidade. Ela nasce da operação diária.
         </p>
 
-        {/* Photo grid — 2 cols mobile, 4 cols desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {/* Carrossel de verdade: o trilho rola com scroll-snap e a nav abaixo é
+            montada por src/motion.js a partir do scroll real. Antes eram 6
+            pontinhos sem handler para 4 fotos — controle morto. */}
+        <div className="odm-gal">
           {photos.map((photo, i) => (
-            <div key={i} className="rounded-[9.7px] overflow-hidden h-[180px] md:h-[388px]">
+            <div key={i} className="rounded-[9.7px] overflow-hidden h-[180px] md:h-[388px] odm-gal__slide">
               <img
                 src={photo}
                 alt={`Sede W3 ${i + 1}`}
@@ -95,13 +97,8 @@ export default function Sede() {
           ))}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="flex justify-center items-center gap-2 mt-6">
-          <div className="w-2 h-2 rounded-full bg-[#F55900]" />
-          {[1, 2, 3, 4, 5].map(i => (
-            <div key={i} className="w-2 h-2 rounded-full bg-white/20" />
-          ))}
-        </div>
+        {/* Setas + pontos: preenchidos por src/motion.js */}
+        <div className="odm-gal__nav" />
       </div>
     </section>
   )

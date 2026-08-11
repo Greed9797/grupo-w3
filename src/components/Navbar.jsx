@@ -56,7 +56,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden fixed top-[75px] left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-b border-[#242424] flex flex-col px-6 py-6 gap-5">
+        <div className="md:hidden fixed top-[75px] left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-b border-[#242424] flex flex-col px-6 py-6 gap-5 odm-mnav">
           <a href="#quem-somos" onClick={() => setMenuOpen(false)} className="text-[#939393] hover:text-white transition-colors text-[15px]">Quem Somos</a>
           <a href="#solucoes" onClick={() => setMenuOpen(false)} className="text-[#939393] hover:text-white transition-colors text-[15px]">Soluções</a>
           <a href="#cases" onClick={() => setMenuOpen(false)} className="text-[#939393] hover:text-white transition-colors text-[15px]">Cases</a>
