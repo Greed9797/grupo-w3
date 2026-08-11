@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const XIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
     <line x1="2" y1="2" x2="12" y2="12" stroke="#ef4444" strokeWidth="2" strokeLinecap="round"/>
@@ -18,15 +20,24 @@ const PlayIcon = () => (
 )
 
 /* Depoimentos em vídeo. Os posters já trazem a legenda queimada no pixel, por
-   isso nenhum figcaption por cima. Cada card abre o Short em nova aba. */
+   isso nenhum figcaption por cima. O player só entra no clique (padrão facade):
+   antes disso o card é uma imagem de 40 KB, não um iframe do YouTube. */
 const depoimentos = [
-  { poster: '/images/depoimento-1.webp', href: 'https://www.youtube.com/shorts/TqbCf0wx0Bo', alt: 'aumentou em 50% a conta do Mercado Livre' },
-  { poster: '/images/depoimento-2.webp', href: 'https://www.youtube.com/shorts/3A67zFdPMjY', alt: 'crescimento de 100% mês a mês' },
-  { poster: '/images/depoimento-3.webp', href: 'https://www.youtube.com/shorts/6oZ7ZuU7ASs', alt: 'aumentou a receita em mais de R$ 3 milhões' },
-  { poster: '/images/depoimento-4.webp', href: 'https://www.youtube.com/shorts/ChJJWCSxh3I', alt: 'totalmente adaptável ao meu nicho' },
+  { id: 'TqbCf0wx0Bo', poster: '/images/depoimento-1.webp', alt: 'aumentou em 50% a conta do Mercado Livre' },
+  { id: '3A67zFdPMjY', poster: '/images/depoimento-2.webp', alt: 'crescimento de 100% mês a mês' },
+  { id: '6oZ7ZuU7ASs', poster: '/images/depoimento-3.webp', alt: 'aumentou a receita em mais de R$ 3 milhões' },
+  { id: 'ChJJWCSxh3I', poster: '/images/depoimento-4.webp', alt: 'totalmente adaptável ao meu nicho' },
 ]
 
+const shortUrl = (id) => `https://www.youtube.com/shorts/${id}`
+// nocookie: nada é gravado no navegador de quem só passa pela seção.
+// autoplay funciona com som porque quem dispara é o clique do usuário.
+const embedUrl = (id) => `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0`
+
 export default function Cases() {
+  // Um player por vez: abrir outro devolve o anterior ao poster.
+  const [tocando, setTocando] = useState(null)
+
   return (
     <section id="cases" className="bg-black py-12 md:py-20 border-t border-[#242424]">
       <div className="max-w-[1280px] mx-auto px-5 md:px-10">
@@ -78,18 +89,35 @@ export default function Cases() {
         <h2 id="video-wall-title" className="odm-wall__heading">O que falam sobre nós</h2>
         <div className="odm-wall" aria-labelledby="video-wall-title">
           {depoimentos.map((item) => (
-            <figure key={item.href} className="odm-wall__item">
-              <img src={item.poster} alt={`Depoimento de cliente: ${item.alt}`} loading="lazy" decoding="async" />
-              <span className="odm-wall__play" aria-hidden="true"><PlayIcon /></span>
-              {/* Área de clique = card inteiro. Fica acima do poster e do play,
-                  mas o play continua visível porque o link não tem fundo. */}
-              <a
-                className="odm-wall__link"
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Assistir depoimento no YouTube: ${item.alt}`}
-              />
+            <figure key={item.id} className="odm-wall__item">
+              {tocando === item.id ? (
+                <iframe
+                  className="odm-wall__frame"
+                  src={embedUrl(item.id)}
+                  title={`Depoimento de cliente: ${item.alt}`}
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                  allowFullScreen
+                />
+              ) : (
+                <>
+                  <img src={item.poster} alt={`Depoimento de cliente: ${item.alt}`} loading="lazy" decoding="async" />
+                  <span className="odm-wall__play" aria-hidden="true"><PlayIcon /></span>
+                  {/* Área de clique = card inteiro. O href real fica no elemento:
+                      sem JS o card continua levando ao Short em vez de virar
+                      botão morto; com JS o clique abre o player aqui mesmo. */}
+                  <a
+                    className="odm-wall__link"
+                    href={shortUrl(item.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Assistir depoimento: ${item.alt}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setTocando(item.id)
+                    }}
+                  />
+                </>
+              )}
             </figure>
           ))}
         </div>

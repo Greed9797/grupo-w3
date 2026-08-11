@@ -718,6 +718,18 @@
 
 .odm-wall__item:hover img { transform: scale(1.03); }
 
+/* O player entra no lugar do poster, dentro do mesmo recorte 9:16. Nada de
+   overlay por cima: o link some junto com o poster, senão ele engoliria os
+   cliques nos controles do YouTube. */
+.odm-wall__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: inherit;
+}
+
 /* Área de clique = card inteiro. Fica acima do poster e do play, mas o
    play permanece visível porque o link não tem fundo próprio. */
 .odm-wall__link {
