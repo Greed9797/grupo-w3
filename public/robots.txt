@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grupow3.com.br/sitemap.xml

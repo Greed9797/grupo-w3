@@ -3,7 +3,7 @@ const pillars = [
     title: 'Gerar Previsibilidade',
     description: 'Dados e métricas que eliminam achismos e trazem clareza para o crescimento.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
+      <svg aria-hidden="true" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
         <line x1="18" y1="20" x2="18" y2="10"/>
         <line x1="12" y1="20" x2="12" y2="4"/>
         <line x1="6" y1="20" x2="6" y2="14"/>
@@ -14,7 +14,7 @@ const pillars = [
     title: 'Gerar Margem',
     description: 'Otimização financeira para que cada venda contribua com lucro real.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
+      <svg aria-hidden="true" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
         <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
         <path d="M22 12A10 10 0 0 0 12 2v10z"/>
       </svg>
@@ -24,7 +24,7 @@ const pillars = [
     title: 'Gerar Liberdade Estratégica',
     description: 'Autonomia para tomar decisões com base em estrutura sólida.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
+      <svg aria-hidden="true" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10"/>
         <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
       </svg>
@@ -34,7 +34,7 @@ const pillars = [
     title: 'Estruturar Negócios Reais',
     description: 'Processos, times e sistemas que sustentam a operação a longo prazo.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
+      <svg aria-hidden="true" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
         <rect x="2" y="7" width="22" height="15" rx="2" ry="2"/>
         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
       </svg>
@@ -44,7 +44,7 @@ const pillars = [
     title: 'Profissionalizar Operações',
     description: 'Elevar o nível de gestão e execução do seu e-commerce.',
     icon: (
-      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
+      <svg aria-hidden="true" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#F55900" strokeWidth="1.5">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
         <path d="M6 12v5c3 3 9 3 12 0v-5"/>
       </svg>

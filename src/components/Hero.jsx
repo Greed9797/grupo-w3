@@ -62,7 +62,7 @@ export default function Hero() {
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
             style={{ background: 'rgba(13,13,13,0.85)', border: '1px solid rgba(38,38,38,0.9)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#F55900"/>
               <circle cx="12" cy="10" r="3" stroke="#F55900"/>
             </svg>
@@ -72,7 +72,7 @@ export default function Hero() {
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
             style={{ background: 'rgba(13,13,13,0.85)', border: '1px solid rgba(38,38,38,0.9)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#F55900"/>
               <circle cx="9" cy="7" r="4" stroke="#F55900"/>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#F55900"/>
@@ -83,7 +83,7 @@ export default function Hero() {
             className="flex items-center gap-2 rounded-full px-4 py-2 self-center sm:self-auto"
             style={{ background: 'rgba(13,13,13,0.85)', border: '1px solid rgba(38,38,38,0.9)', backdropFilter: 'blur(9px)', WebkitBackdropFilter: 'blur(9px)' }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
               <circle cx="12" cy="12" r="10" stroke="#F55900"/>
               <line x1="2" y1="12" x2="22" y2="12" stroke="#F55900"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#F55900"/>

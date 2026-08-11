@@ -1,18 +1,18 @@
 const CheckIcon = () => (
-  <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
+  <svg aria-hidden="true" width="14" height="11" viewBox="0 0 14 11" fill="none">
     <polyline points="1,5 5,9 13,1" stroke="#F55900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
 const ArrowIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
     <line x1="7" y1="17" x2="17" y2="7"/>
     <polyline points="7 7 17 7 17 17"/>
   </svg>
 )
 
 const BrainIcon = () => (
-  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
     <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
     <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
@@ -26,14 +26,14 @@ const BrainIcon = () => (
 )
 
 const TrendingUpIcon = () => (
-  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
     <polyline points="16 7 22 7 22 13"/>
   </svg>
 )
 
 const ShoppingBagIcon = () => (
-  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
     <line x1="3" y1="6" x2="21" y2="6"/>
     <path d="M16 10a4 4 0 0 1-8 0"/>
@@ -41,14 +41,14 @@ const ShoppingBagIcon = () => (
 )
 
 const DollarIcon = () => (
-  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <line x1="12" y1="1" x2="12" y2="23"/>
     <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
   </svg>
 )
 
 const DashboardIcon = () => (
-  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect width="7" height="9" x="3" y="3" rx="1"/>
     <rect width="7" height="5" x="14" y="3" rx="1"/>
     <rect width="7" height="9" x="14" y="12" rx="1"/>

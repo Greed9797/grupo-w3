@@ -25,7 +25,7 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-2 bg-[#F55900] text-[#F2F2F2] text-[9.5px] font-bold px-5 py-3 rounded-[9.5px] hover:bg-orange-600 transition-colors uppercase tracking-wide"
         >
           fale conosco
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <line x1="7" y1="17" x2="17" y2="7"/>
             <polyline points="7 7 17 7 17 17"/>
           </svg>
@@ -68,7 +68,7 @@ export default function Navbar() {
             style={{ background: 'linear-gradient(90deg, #F55900, #F47917)', fontSize: '11.9px' }}
           >
             fale conosco
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
               <line x1="7" y1="17" x2="17" y2="7"/>
               <polyline points="7 7 17 7 17 17"/>
             </svg>
