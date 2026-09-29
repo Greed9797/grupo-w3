@@ -14,6 +14,10 @@
       "destination": "https://mentoria-ames-preview.vercel.app/educacao"
     },
     {
+      "source": "/educacao/",
+      "destination": "https://mentoria-ames-preview.vercel.app/educacao"
+    },
+    {
       "source": "/educacao/:path*",
       "destination": "https://mentoria-ames-preview.vercel.app/educacao/:path*"
     }
